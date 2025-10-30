@@ -22,3 +22,4 @@ C:\Users\tirel\source\repos\ServiceWithAPI\Service.Business\obj\Debug\net8.0\Ser
 C:\Users\tirel\source\repos\ServiceWithAPI\Service.Business\obj\Debug\net8.0\refint\Service.Business.dll
 C:\Users\tirel\source\repos\ServiceWithAPI\Service.Business\obj\Debug\net8.0\Service.Business.pdb
 C:\Users\tirel\source\repos\ServiceWithAPI\Service.Business\obj\Debug\net8.0\ref\Service.Business.dll
+C:\Users\tirel\source\repos\ServiceWithAPI\Service.Business\obj\Debug\net8.0\Service.Business.sourcelink.json

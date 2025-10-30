@@ -29,6 +29,10 @@ namespace Service.API
                 ApiLogger.InitApiLogger(logDirectory);
                 ApiLogger.Info(_className, "RunAsync", "Configuração da API carregada, logger da API iniciado!");
 
+                // Registra os logs do ASP.NET Core no mesmo arquivo de log usado pela API
+                var logger = ApiLogger.GetLoggerInstance();
+                builder.Host.UseSerilog(logger);
+
                 builder.Services.AddControllers();
                 bool useSwagger = Convert.ToBoolean(Config.Get("API:UseSwagger"));
                 if (useSwagger)

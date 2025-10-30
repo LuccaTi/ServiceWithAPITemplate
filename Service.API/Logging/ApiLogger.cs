@@ -20,12 +20,28 @@ namespace Service.API.Logging
 
                 logger = new LoggerConfiguration()
                                     .MinimumLevel.Debug()
+                                    //.WriteTo.Console()
                                     .WriteTo.File(Path.Combine(logDirectory, $"API_log_.txt"),
                                     rollingInterval: RollingInterval.Day, // Um arquivo de log por dia
                                     retainedFileCountLimit: null, // Null mantém os arquivos indefinidamente
                                     shared: true // Permite acompanhar em tempo real a escrita no log
                                     )
                                     .CreateLogger();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        internal static Serilog.Core.Logger GetLoggerInstance()
+        {
+            try
+            {
+                if (logger is null)
+                    throw new InvalidOperationException($"{DateTime.Now} - {_className} - GetLoggerInstance - Não foi possível obter a instância do logger da API porque ele não foi iniciado!");
+
+                return logger;
             }
             catch (Exception)
             {
